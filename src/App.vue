@@ -1,31 +1,41 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+   <v-app class="bg-background1">
+    <v-navigation-drawer color="primary" app>
+    <v-list class="bg-primary">
+    <v-list-item @click.native="$router.push('/foo')" class="bg-accent">
+    <v-list-item-title >
+    Jason's website
+    </v-list-item-title>
+    </v-list-item>
+     <v-list-item color="primary" style="background-color: whitesmoke">
+    <v-list-item-title>
+    Jason's Links
+    </v-list-item-title>
+    </v-list-item>
+    </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app color="secondary">
+    <!-- -->
+    </v-app-bar>
+
+    <!-- Sizes your content based upon application components -->
+    <v-main class="fill-height bg-background1">
+
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid class="bg-background2">
+      <!-- If using vue-router -->
+      <router-view></router-view>
+    </v-container>
+  </v-main>
+   </v-app>
 </template>
 
+<script setup>
+</script>
+
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+ 
+
 </style>
